@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 2 Solution</title>
+    <link rel="stylesheet" href="style.css"/>
     <script src="../angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body ng-app="ShoppingListCheckOff">
-    <div ng-controller="ToBuyController as buy">
-        <h1>To Buy List</h1>
-        <div ng-repeat=""></div>
+    <h1>Shopping Bought Lists (Module 2 Solution)</h1>
+    <div id="list1" ng-controller="ToBuyController as buy">
+        <h2>To Buy List</h2>
+        <p ng-if="buy.list.length==0"><strong>Everything is bought!</strong></p>
+        <ol>
+        <li ng-repeat="item in buy.list">
+            {{item.quantity}} : {{item.name}} 
+            <button ng-click="buy.addToBought($index)">Bought</button>
+        </li>
+        </ol>
     </div>
-    <div ng-controller="AlreadyBoughtController as bought">
-        <h1>Already Bought List</h1>
-        <div ng-repeat=""></div>
+    <div id="list2" ng-controller="AlreadyBoughtController as bought">
+        <h2>Already Bought List</h2>
+        <p ng-if="bought.list.length==0"><strong>Nothing bought yet</strong></p>
+        <ol>
+        <li ng-repeat="item in bought.list">
+            Bought {{item.quantity}} {{item.name}}
+        </li>
+        </ol>
     </div>
 </body>
 </html>
