@@ -15,7 +15,9 @@ function NarrowItDownController(MenuSearchService){
         narrow.found = result;
         });
     };
-    narrow.onRemove = MenuSearchService.onRemove;
+    narrow.onRemove = function (itemIndex) {
+    narrow.found.splice(itemIndex, 1);
+    };
 }
 function foundItemDirective(){
     var ddo={
@@ -45,22 +47,19 @@ function MenuSearchService($http){
         }).then(
             function success(result){
                 var resultItems=result.data.menu_items;
-                var found = [];
+                var foundItems = [];
                 for(var i=0;i<resultItems.length;i++){
-                    if(searchTerm!=''&resultItems[i].description.indexOf(searchTerm!=-1)){
-                        found.append({
+                    if(searchTerm!=''&& resultItems[i].description.indexOf(searchTerm)!=-1){
+                        foundItems.push({
                             name:resultItems[i].name,
                             description:resultItems[i].description
                         });
                     }
                 }
-                return found;
+                return foundItems;
             }, function error(error) {
 
       });
     };
-    service.onRemove = function (itemIndex) {
-    item.splice(itemIndex, 1);
-};
 }
 })();
