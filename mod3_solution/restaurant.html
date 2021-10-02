@@ -1,6 +1,8 @@
+<div ng-if="!narrowdir.ifEmpty()">
 <ul>
-    <li ng-repeat="item in foundItems">
-        {{item.name}} : {{item.description}}
-        <button ng-click="onRemove({index:$index})">Narrow It Down For Me!</button>
+    <li ng-repeat="item in narrowdir.found">
+        {{item.name}} : {{item.description}} 
+        <button class="btn btn-primary" ng-click="narrowdir.onRemove({index:$index})">Narrow It Down For Me!</button>
     </li>
 </ul>
+</div>
