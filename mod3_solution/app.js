@@ -51,6 +51,7 @@ function MenuSearchService($http){
                 for(var i=0;i<resultItems.length;i++){
                     if(searchTerm!=''&& resultItems[i].description.indexOf(searchTerm)!=-1){
                         foundItems.push({
+                            short_name : menuItems[i].short_name,
                             name:resultItems[i].name,
                             description:resultItems[i].description
                         });
