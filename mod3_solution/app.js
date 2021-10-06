@@ -34,7 +34,7 @@ return ddo;
 function FoundItemDirectiveController(){
     var narrowdir = this;
     narrowdir.ifEmpty=function (){
-        return narrowdir.found.lenght==0;
+        return narrowdir.found.length==0;
     };
 }
 MenuSearchService.$inject['$http']
