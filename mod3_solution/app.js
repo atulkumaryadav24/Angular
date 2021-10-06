@@ -10,9 +10,11 @@ function NarrowItDownController(MenuSearchService){
     var narrow = this;
     narrow.searchTerm="";
     narrow.found=[];
+    narrow.s=false;
     narrow.search = function (){
         MenuSearchService.getMatchedMenuItems(narrow.searchTerm).then(function (result) {
         narrow.found = result;
+        narrow.s=true;
         });
     };
     narrow.onRemove = function (itemIndex) {
