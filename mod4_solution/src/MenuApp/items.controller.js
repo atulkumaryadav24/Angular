@@ -5,6 +5,6 @@
     ItemsController.$inject['itemsData']
     function ItemsController(itemsData){
         var items = this;
-        items.itemsData = itemsData;
+        items.iData = itemsData;
     }
 })();

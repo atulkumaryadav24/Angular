@@ -2,16 +2,16 @@
     angular.module('ModApp',['ui.router'])
     .config(Routes);
     Routes.$inject['$stateProvider','$urlRouterProvider'];
-    function Routes(){
+    function Routes($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/');
         $stateProvider
         .state('home',{
             url: '/',
-            template: "<a ui-sref='next'>NEXT</a>"
+            templateUrl: "temp.html"
         })
         .state('next',{
             url:'/next',
-            template: "YOU ARE HERE!!!"
+            template: "<a ui-sref='home'>Home</a>"
         });
     }
 })();

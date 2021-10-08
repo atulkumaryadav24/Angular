@@ -4,7 +4,7 @@
     .component('items',{
         templateUrl:'templates/items.component.template.html',
         scope:{
-            itemsData : '<'
+            iData : '<'
         }
     });
 })();

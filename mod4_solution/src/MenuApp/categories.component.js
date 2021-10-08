@@ -4,7 +4,7 @@
     .component('categories',{
         templateUrl:'templates/categories.component.template.html',
         scope:{
-            categoryData : '<'
+            catData : '<'
         }
     });
 })();
