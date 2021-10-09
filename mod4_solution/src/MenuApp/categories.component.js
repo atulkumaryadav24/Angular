@@ -2,9 +2,9 @@
     'use strict';
     angular.module('MenuApp')
     .component('categories',{
-        templateUrl:'templates/categories.component.template.html',
-        scope:{
-            catData : '<'
+        templateUrl:'src/MenuApp/templates/categories-component.template.html',
+        bindings:{
+            cateData : '<'
         }
     });
 })();

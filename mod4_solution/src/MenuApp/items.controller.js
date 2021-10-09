@@ -5,6 +5,6 @@
     ItemsController.$inject['itemsData']
     function ItemsController(itemsData){
         var items = this;
-        items.iData = itemsData;
+        items.iData = itemsData.data.menu_items;
     }
 })();

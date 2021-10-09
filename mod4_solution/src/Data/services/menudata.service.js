@@ -1,7 +1,7 @@
 (function (){
     'use strict';
     angular.module('data')
-    .service('MenuDataService',MenuDataService);
+    .service('MenuDataService', MenuDataService);
     MenuDataService.$inject['$http'];
     function MenuDataService($http){
         var service = this;
@@ -9,11 +9,12 @@
             return $http({
                 method : 'GET',
                 url : 'https://davids-restaurant.herokuapp.com/categories.json'
-            }).then(function success(result){
-                return result.data;
-            },function fail(error) {
-                console.log(error);
             });
+            // .then(function success(result){
+            //     return result.data;
+            // }).catch(function fail(error) {
+            //     console.log(error);
+            // });
         };
         service.getItemsForCategory = function (categoryShortName){
             return $http({
@@ -22,11 +23,13 @@
                 params : {
                     category : categoryShortName
                 }
-            }).then(function success(result){
-                return result.data.menu_items;
-            },function fail(error) {
-                console.log(error);
             });
+            // .then(function success(result){
+            //     return result.data.menu_items;
+            // })
+            // .catch(function fail(error) {
+            //     console.log(error);
+            // });
         };
     }
 })();

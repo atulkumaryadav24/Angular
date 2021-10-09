@@ -23,8 +23,8 @@
                             }]
             }
         })
-        state('categories.items',{
-            url: '/categories/{shortName}',
+        .state('categories.items',{
+            url: '/items/{shortName}',
             templateUrl:'src/MenuApp/templates/items.template.html',
             controller : 'ItemsController as itemCtrl',
             resolve : {

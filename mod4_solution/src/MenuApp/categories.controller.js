@@ -5,6 +5,6 @@
     CategoriesController.$inject['categoryData'];
     function CategoriesController(categoryData){
         var category = this;
-        category.catData = categoryData;
+        category.catData = categoryData.data;
     }
 })();

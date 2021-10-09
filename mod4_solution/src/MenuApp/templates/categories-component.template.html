@@ -1,5 +1,5 @@
 <ul>
-    <li ng-repeat='item in catCtrl.categoryData'>
+    <li ng-repeat='item in $ctrl.cateData'>
         <a ui-sref="categories.items({shortName:item.short_name})">{{item.name}}</a>
     </li>
 </ul>
