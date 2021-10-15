@@ -1,0 +1,60 @@
+<div class="container">
+    <h2 id="sign-up-title" class="text-center">Sign up</h2>
+    <div class="text-center">
+        Sign up to receive the best news about this restaurant.
+    </div>
+
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+
+            <form name="signUpForm" novalidate>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" required class="form-control" name="firstName" placeholder="First name"
+                        ng-model="signUpCtrl.firstName">
+                    <p class="alert alert-primary"
+                        ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">First name is
+                        required.</p>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" required class="form-control" name="lastName" placeholder="Last name"
+                        ng-model="signUpCtrl.lastName">
+                    <p class="alert alert-primary"
+                        ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">Last name is
+                        required.</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" required class="form-control" name="email" placeholder="Email"
+                        ng-model="signUpCtrl.email">
+                    <p class="alert alert-primary" ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">
+                        Email address is required.</p>
+                    <p class="alert alert-primary" ng-if="signUpForm.email.$error.email && signUpForm.email.$touched">You
+                        must provide a valid email address.</p>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" required class="form-control" name="phone" placeholder="Phone number"
+                        ng-model="signUpCtrl.phone">
+                    <p class="alert alert-primary" ng-if="signUpForm.phone.$error.required && signUpForm.phone.$touched">
+                        Phone number is required.</p>
+                </div>
+                <div class="form-group">
+                    <label for="favoriteDishNumber">Favorite Dish Number</label>
+                    <input type="text" class="form-control" required name="favoriteDishNumber" placeholder="Favorite dish number"
+                        ng-model="signUpCtrl.favoriteDishNumber" ng-change="signUpCtrl.checkDishNumber();">
+                        <p class="alert alert-primary" ng-if="signUpForm.favoriteDishNumber.$error.required && signUpFrom.favoriteDishNumber.$touched">Field is required.</p>
+                        <p class="alert alert-primary" ng-if="signUpCtrl.validDishNumber && signUpFrom.favoriteDishNumber.$touched">No such menu number exists.</p>
+                </div>
+                <button class="btn btn-default" ng-disabled="signUpForm.$invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="alert alert-success" ng-if="signUpCtrl.saved">Your information has been saved.</div>
+        </div>
+    </div>
+</div>
