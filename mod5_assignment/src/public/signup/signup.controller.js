@@ -9,7 +9,10 @@
         ctrl.profileSaved = false;
         ctrl.validDishNumber = false;
         ctrl.checkDishNumber = function (){
-            ctrl.validDishNumber = SignUpService.isShortName(ctrl.favoriteDishNumber);
+            SignUpService.isShortName(ctrl.favoriteDishNumber)
+                                    .then(function (response){
+                                        ctrl.validDishNumber = true;
+                                    });
         };
         ctrl.createProfile = function (){
             RegisterService.setProfile({
