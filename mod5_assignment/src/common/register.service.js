@@ -4,7 +4,7 @@
     .service('RegisterService',RegisterService);
 
     function RegisterService(){
-        service = this;
+        var service = this;
         service.profile={};
         service.details = false;
         service.setProfile=function (profile){

@@ -47,14 +47,14 @@
                         <p class="alert alert-primary" ng-if="signUpForm.favoriteDishNumber.$error.required && signUpFrom.favoriteDishNumber.$touched">Field is required.</p>
                         <p class="alert alert-primary" ng-if="signUpCtrl.validDishNumber && signUpFrom.favoriteDishNumber.$touched">No such menu number exists.</p>
                 </div>
-                <button class="btn btn-default" ng-disabled="signUpForm.$invalid">Submit</button>
+                <button class="btn btn-default" ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.createProfile()">Submit</button>
             </form>
         </div>
     </div>
 
-    <!-- <div class="row">
+    <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-            <div class="alert alert-success" ng-if="signUpCtrl.saved">Your information has been saved.</div>
+            <div class="alert alert-success" ng-if="signUpCtrl.profileSaved">Your information has been saved.</div>
         </div>
-    </div> -->
+    </div>
 </div>

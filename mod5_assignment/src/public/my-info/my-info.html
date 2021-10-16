@@ -1,7 +1,18 @@
 <div class="container">
     <h2 id="sign-up-title" class="text-center">My Info</h2>
-    <div class="text-center">
-        <!-- ng-if='!myInfoCtrl.details' -->
+    <div class="text-center" ng-if='!myInfoCtrl.details'>
         No details available Sign up <a href="#" ui-sref="public.signup">here</a>
+    </div>
+    <div class="text-center" ng-if='myInfoCtrl.details'>
+        Your details are :-
+        <br>Full Name : 
+        {{myInfoCtrl.profile.firstName}} 
+        {{myInfoCtrl.profile.lastName}}
+        <br>E-mail : 
+        {{myInfoCtrl.profile.email}}
+        <br>Phone : 
+        {{myInfoCtrl.profile.phone}}
+        <br>Favorite Dish Number : 
+        {{myInfoCtrl.profile.favoriteDishNumber}}
     </div>
 </div>
