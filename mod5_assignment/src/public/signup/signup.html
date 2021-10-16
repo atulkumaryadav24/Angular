@@ -47,9 +47,9 @@
                     <input type="text" class="form-control" required name="favoriteDishNumber" placeholder="Favorite dish number"
                         ng-model="signUpCtrl.favoriteDishNumber" ng-change="signUpCtrl.checkDishNumber();">
                         <p class="alert alert-primary" ng-if="signUpForm.favoriteDishNumber.$error.required && signUpFrom.favoriteDishNumber.$touched">Field is required.</p>
-                        <p class="alert alert-primary" ng-if="!signUpCtrl.validDishNumber && signUpFrom.favoriteDishNumber.$touched">No such menu number exists.</p>
+                        <p class="alert alert-primary" ng-if="signUpCtrl.is && signUpFrom.favoriteDishNumber.$touched">No such menu number exists.</p>
                 </div>
-                <button class="btn btn-default" ng-disabled="signUpForm.$invalid && signUpCtrl.validDishNumber" ng-click="signUpCtrl.createProfile()">Submit</button>
+                <button class="btn btn-default" ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.createProfile()">Submit</button>
             </form>
         </div>
     </div>
