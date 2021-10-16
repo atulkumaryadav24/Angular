@@ -9,9 +9,9 @@
         service.isShortName = function (favoriteDishNumber){
         return $https.get(ApiPath+"/menu_items/"+favoriteDishNumber+".json")
         .then(function (result){
-            return result.data;
-        })
-        .catch(function (error){
+            return result;
+        },function (error){
+            return error;
         });
         };
     }

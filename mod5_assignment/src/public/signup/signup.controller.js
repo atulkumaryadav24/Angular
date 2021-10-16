@@ -11,7 +11,14 @@
         ctrl.checkDishNumber = function (){
             SignUpService.isShortName(ctrl.favoriteDishNumber)
                                     .then(function (response){
-                                        ctrl.validDishNumber = true;
+                                        ctrl.response = response.data;
+                                        if(response.status === 200){
+                                            ctrl.validDishNumber = true;
+                                        }
+                                        else{
+                                            ctrl.validDishNumber = false;
+                                        }
+                                        // console.log("response : ",response);
                                     });
         };
         ctrl.createProfile = function (){
@@ -20,9 +27,10 @@
                 lastName : ctrl.lastName,
                 email : ctrl.email,
                 phone : ctrl.phone,
-                favoriteDishNumber : ctrl.favoriteDishNumber
+                favoriteDishNumber : ctrl.favoriteDishNumber,
+                dishName : ctrl.response.name
             });
             ctrl.profileSaved = true;
-        }  
+        }
     }
 })();
